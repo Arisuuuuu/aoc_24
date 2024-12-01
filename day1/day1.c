@@ -66,6 +66,8 @@ int main(void)
     part2(left_num, right_num, entry_cnt);
 
     fclose(fp);
+    free(left_num);
+    free(right_num);
 
     return 0;
 }
@@ -118,5 +120,7 @@ void part2(int *left_num, int *right_num, int entry_size)
     {
         sim_score += left_dic[i] * right_dic[i] * i;
     }
+    free(right_dic);
+    free(left_dic);
     printf("similarity score is %d\n", sim_score);
 }
